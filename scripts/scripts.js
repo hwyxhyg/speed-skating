@@ -24,6 +24,17 @@ $(document).ready(function () {
     });
   });
 
+    // 第二个等待框显示时，强制网页滚动到顶部并禁用滚动
+  $("#hintme").on('show', function () {
+    $(window).scrollTop(0);
+    $("body").css("overflow", "hidden");
+  });
+
+  // 第二个等待框隐藏时，恢复网页滚动
+  $("#hintme").on('hide', function () {
+    $("body").css("overflow", "auto");
+  });
+
   //scroll V
   ScrollReveal().reveal("p");
   ScrollReveal().reveal("iframe");
